@@ -1,5 +1,8 @@
 package xyz.fokion.builder
 
+import com.cloudbees.groovy.cps.NonCPS
+
+
 class Builder {
     private String url
     private int port
