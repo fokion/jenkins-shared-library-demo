@@ -7,7 +7,7 @@ class DummyScanner implements Serializable , IScanner {
     private  String url
     private  int port
 
-    public Scanner(Builder builder){
+    private Scanner(Builder builder){
         url = builder.getUrl()
         port = builder.getPort()
     }
@@ -40,17 +40,21 @@ class DummyScanner implements Serializable , IScanner {
         Builder(String url){
             this.url = url
         }
-        Builder setPort(int port){
+        def setPort(int port){
             this.port = port
             return this
         }
 
-        int getPort() {
+        def getPort() {
             return port
         }
 
-        String getUrl() {
+        def getUrl() {
             return url
+        }
+
+        def build() {
+            return new DummyScanner(this)
         }
     }
 }
